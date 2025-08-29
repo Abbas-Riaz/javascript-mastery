@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick=" console.log(`cart quantity :  ${variable1}`)">show quantity</button>
+  <button onclick="if (variable1 < 10){ console.log(`items added : ${variable1+=1} `)}else {
+     alert('cart is full')
+  }">add to cart</button>
+  <button onclick="
+  if (variable1 < 10 ){ console.log(`items added : ${variable1+=2} `)}else {
+    alert ('cart is full')}
+  ">+2</button>
+  <button>+3</button>
+  <button onclick="console.log(variable1=0)">reset cart </button>
+</body>
+<script>
+  let variable1 = 0;
+
+</script>
+
+</html>
