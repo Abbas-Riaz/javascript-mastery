@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <button> hello </button>
+  <button class="js-button">second button</button>
+</body>
+<script>
+  /*  document.body.innerHTML = 'hello  js';
+     document.title = 'Good Job';*/
+
+  // console.log(document.body.innerHTML);
+  // document.body.innerHTML = 'changed';
+
+  // console.log(document.body.innerHTML);
+  // document.body.innerHTML = ' <button> get changed </button>  ';
+
+  // console.log(document.body.innerHTML);
+
+
+  // document query selector is used to access any element in boyd
+
+  console.log(document.querySelector('button').innerHTML = 'hello i am changed');
+  const buttonElement = document.querySelector('.js-button');
+  console.log(buttonElement);
+
+
+</script>
+
+</html>

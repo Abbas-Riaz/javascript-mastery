@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM projects</title>
+</head>
+
+<body>
+  <p> Youtube Subcribe Button</p>
+  <button class="js-button-subscribe" onclick="subscribe();"> Subscribe</button>
+
+  <p>cost of shipping </p>
+  <input class="js-cost" placeholder="cost of order" onkeydown="
+  handleCostkeydown(event);
+  ">
+  <button onclick="calculateShipping(); ">calcuate shipping fee</button>
+  <p class="js-shipping-fee"></p>
+
+
+
+  <script>
+
+    function handleCostkeydown(event) {
+      if (event.key === 'Enter') {
+        calculateShipping();
+      }
+    }
+    function subscribe() {
+      if (document.querySelector('.js-button-subscribe').innerText === 'Subscribe') {
+        document.querySelector('.js-button-subscribe').innerHTML = 'Subscribed';
+      } else {
+        document.querySelector('.js-button-subscribe').innerHTML = 'Subscribe'
+      }
+    }
+
+
+    function calculateShipping() {
+      const inputElement = document.querySelector('.js-cost');
+      let cost = Number(inputElement.value);
+      if (cost > 40) {
+
+        cost = cost + (cost * 0.1);
+        shippingFee = document.querySelector('.js-shipping-fee');
+        shippingFee.innerHTML = cost;
+      }
+    }
+
+
+    // clicks, keydowns are event onclick onkeydown are event listeneres
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+
+<body>
+
+  <script>
+
+    products = {
+      name: 'apple',
+      price: 200,
+    };
+
+    console.log(products);
+    console.log(products.name);
+    console.log(products.price);
+
+    products.price = 1000;
+    console.log(products.price);
+
+    products.quality = 'A';
+    console.log(products);
+
+    delete products.quality;
+    console.log(products);
+
+    console.log(typeof (products));
+
+    const products2 = {
+      name: 'shirt',
+      price: 400,
+      ['deleivery-time']: '1 day',
+
+      rating: {
+        stars: '4 star',
+        count: 45
+      },
+
+      fun: function fun1() {
+        console.log("hello i am going to school");
+      },
+
+
+    }
+
+
+    console.log(products2);
+    console.log(products2.rating);
+    console.log(products2.rating.stars);
+    console.log(products2.rating.count);
+    products2.fun();
+
+    console.log(products2['deleivery-time']);
+
+
+    // jason object similar to java script objects but have no function and values are always in double quotes 
+    // json syntax is comaptible with all languages
+
+    // this is how we convert javascript objects to jason objects 
+
+    console.log(JSON.stringify(products2));   // fucntion will not displayed of products2 because jason does not support function
+
+    // now how to convert json object to js object
+
+    const jsonString = JSON.stringify(products2);
+    console.log(JSON.parse(jsonString));
+
+
+    // const only denay to change the value of reference when we use object actually we use reference to change value not changes the reference 
+
+    const object1 = {
+      message: 'hello world',
+    }
+    object2 = object1;
+    console.log(object1.message);
+    console.log(object2.message);
+    object1.message = 'hello , good morning ';
+    console.log(object1.message);
+
+    const object3 = 'hello world';
+
+
+
+    // object are referneces 
+
+
+    console.log(object1 === object2); // TRUE BECAUSE REFERENCES ARE SAME
+    console.log(object1 === object3); // FALSE BECAUSE REFRENCES ARE DIFFRENT
+
+    //SHORT CUTS 
+
+    const object4 = {
+      message: 'hello world , i am learnin js ',
+      price: 2000,
+    };
+
+    // const { message } = object4;   
+    const { message, price } = object4;  // this is called destructuring easier way to take out properties form objects
+
+    console.log(object4.message);
+    console.log(message);
+    console.log(price);
+
+
+    // SHORT HAND PROPERTIES IF FOR OBJECT IF PROPERTY AND RESPECTIVE VALUE NAMES ARE SAME 
+
+    const object5 = {
+      // message: message, 
+      message, // it work like upper line 
+
+      method() {
+        console.log('i am method')
+      },
+    };
+
+    console.log(object5.message);
+    object5.method();
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Dom</title>
+</head>
+
+<body>
+  <input type="text" class="js-name" onkeydown="displayName(event);" onkeyup="displayCharacter(event);">
+  <button onclick=" displayName();"> submitt</button>
+  <p class="js-result"></p>
+  <p class="js-display-char"></p>
+  <button onclick="localStorage.removeItem('eventkeys');">reset</button>
+</body>
+<script>
+  function displayName(event) {
+    if (!event || event.key === 'Enter') {
+      const name = document.querySelector('.js-name');
+      let text = name.value;
+
+      let result = document.querySelector('.js-result');
+      result.innerHTML = `your name is ${text}`;
+    }
+
+
+  }
+
+  function displayCharacter(event) {
+    let eventkeys = JSON.parse(localStorage.getItem('eventkeys')) || '';
+
+
+    eventkeys = document.querySelector('.js-display-char').innerHTML = event.key + eventkeys;
+    let a = localStorage.setItem('eventkeys', JSON.stringify(eventkeys));
+
+
+  }
+
+
+
+
+
+</script>
+
+</html>
