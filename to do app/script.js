@@ -32,8 +32,7 @@
 
 
 
-const todolist = [
-];
+const todolist = [];
 renderTodoList();
 function renderTodoList() {
   let todolisthtml = '';

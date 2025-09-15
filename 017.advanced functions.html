@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+
+<body>
+  <script>
+    greeting();
+    function greeting() {
+      console.log('hello world');
+    }
+
+
+
+    var function1 = function () {
+      console.log('hello wordld');
+    }
+
+    console.log(typeof (function1));
+
+    console.log(function1);
+
+    let function2 = {
+      fun: function () {
+        console.log('hello world through object');
+      },
+    }
+    console.log(function2.fun());
+    // the function is set to execute after a certain period of time 
+    setTimeout(function () {
+      console.log('hello world');
+    }, 3000);
+
+
+    console.log('timout');
+
+    // in this case function will run after a certain time
+
+    setInterval(function () {
+      console.log('hello world');
+    }, 3000);
+
+    // traverse array using for each loop
+
+    let array = ["wash dishes", "dinner", "work"];
+    array.forEach(function (num, index) {
+
+
+      console.log(num, index);
+
+    })
+
+  </script>
+</body>
+
+</html>

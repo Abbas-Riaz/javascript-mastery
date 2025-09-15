@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM projects</title>
+</head>
+
+<style>
+  body {
+    font-family: Arial;
+
+  }
+
+  .subscribe-button {
+
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+
+  .is-subscribed {
+    background-color: rgba(128, 128, 128, 0.369);
+    color: black;
+  }
+
+  .cost-input {
+    font-size: 15px;
+    padding: 10px;
+
+  }
+
+  .calculate-button {
+    background-color: green;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <p> Youtube Subcribe Button</p>
+  <button class="js-button-subscribe subscribe-button" onclick="subscribe();"> Subscribe</button>
+
+  <p>cost of shipping </p>
+  <input class="js-cost cost-input" placeholder="cost of order" onkeydown="
+  handleCostkeydown(event);
+  ">
+  <button class="calculate-button" onclick="calculateShipping(); ">calcuate </button>
+  <p class="js-shipping-fee"></p>
+
+
+
+  <script>
+
+    function handleCostkeydown(event) {
+      if (event.key === 'Enter') {
+        calculateShipping();
+      }
+    }
+    function subscribe() {
+      const button = document.querySelector('.js-button-subscribe')
+      if (button.innerText === 'Subscribe') {
+        document.querySelector('.js-button-subscribe').innerHTML = 'Subscribed';
+        button.classList.add('is-subscribed');
+
+      } else {
+        document.querySelector('.js-button-subscribe').innerHTML = 'Subscribe';
+        button.classList.remove('is-subscribed');
+      }
+    }
+
+
+    function calculateShipping() {
+      const inputElement = document.querySelector('.js-cost');
+      let cost = Number(inputElement.value);
+      if (cost > 40) {
+
+        cost = cost + (cost * 0.1);
+        shippingFee = document.querySelector('.js-shipping-fee');
+        shippingFee.innerHTML = cost;
+      }
+    }
+
+
+    // clicks, keydowns are event onclick onkeydown are event listeneres
+  </script>
+</body>
+
+</html>
