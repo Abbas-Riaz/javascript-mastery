@@ -7,25 +7,99 @@
   <title>rock paper scissor</title>
 </head>
 
+<style>
+  body {
+    background-color: rgb(27, 25, 27);
+    color: white;
+    font-family: Arial;
+
+
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+
+
+  .move-button {
+
+    cursor: pointer;
+    /* padding: 10px; */
+
+  }
+
+
+
+  button {
+    background: transparent;
+    border: none;
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 70px;
+    margin-left: 20px
+  }
+
+  .reset-button {
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    background-color: rgb(175, 103, 8);
+    color: rgb(255, 255, 255);
+    width: 120px;
+    height: 50px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  .scores {
+    font-size: 25px;
+    margin-top: 40px;
+  }
+</style>
+
 <body>
+
+  <p class="title">Rock Paper Scissor Game</p>
   <button onclick=" 
     PlayGame('rock');
-    ">rock</button>
+    "><img class="move-button" src="images-of-game/rock-emoji.png" alt=""></button>
 
   <button onclick="
   PlayGame('paper');
-  ">paper</button>
+  "><img class="move-button" src="images-of-game/paper-emoji.png" alt=""></button>
 
   <button onclick="
    PlayGame('scissor');
-  ">scissor</button>
+  "><img class="move-button" src="images-of-game/scissor-emoji.png" alt=""></button>
+
+  <p class="results"></p>
 
 
-  <button onclick="localStorage.removeItem('scores');">reset</button>
-
-  <p class="js-scores"></p>
-  <p class="js-result"></p>
-  <p class="js-pick"></p>
+  <button onclick="  resetGame();
+  " class="reset-button
+  ">Reset</button>
+  <div class="reset-html">
+    <p class="js-result result reset-value"></p>
+    <p class="js-pick pick  reset-value"></p>
+    <p class="js-scores scores "></p>
+  </div>
 
   <script>
 
@@ -63,7 +137,7 @@
           result = 'you loose';
         }
 
-        alert(`you picked rock and computer pick ${computer_move} , ${result} ,  wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
+        // alert(`you picked rock and computer pick ${computer_move} , ${result} ,  wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
 
       }
 
@@ -81,7 +155,7 @@
           result = 'you loose';
         }
         1
-        alert(`you picked paper and computer pick ${computer_move} , ${result} ,  wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
+        // document.querySelector('.results').innerHTML = (`you picked paper and computer pick ${computer_move} , ${result} ,  wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
       }
 
       else {
@@ -95,7 +169,7 @@
         }
 
 
-        alert(`you picked scissor and computer pick ${computer_move} , ${result}, wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
+        // alert(`you picked scissor and computer pick ${computer_move} , ${result}, wins : ${scores.wins} , lose : ${scores.lose} ,ties : ${scores.ties}`);
 
 
       }
@@ -117,7 +191,8 @@
       }
 
       updateScore();
-      document.querySelector('.js-pick').innerHTML = ` you pick ${PlayerPick} Computer pick : ${computer_move}`;
+      document.querySelector('.js-pick').innerHTML = ` you pick : <img src="images-of-game/${PlayerPick}-emoji.png "  class="move-button"> computer : <img
+      src="images-of-game/${computer_move}-emoji.png"  class="move-button">`;
 
       document.querySelector('.js-result').innerHTML = ` ${result}`;
 
@@ -146,7 +221,21 @@
 
 
     function updateScore() {
-      document.querySelector('.js-scores').innerHTML = `wins: ${scores.wins} , lose: ${scores.lose} , ties: ${scores.ties}`
+      document.querySelector('.js-scores').innerHTML = `Wins: ${scores.wins} , Losses: ${scores.lose} , Ties: ${scores.ties}`
+    }
+
+    function resetGame() {
+      scores = {
+        wins: 0,
+        lose: 0,
+        ties: 0,
+      }; localStorage.removeItem('scores');
+      document.querySelector('.reset-value').innerHTML = '';
+      updateScore();
+      document.querySelectorAll('.reset-value').forEach(function (el) {
+        el.innerHTML = '';
+      });
+
     }
 
 
