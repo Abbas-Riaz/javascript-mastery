@@ -30,7 +30,9 @@
 
 // }
 
-
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+  addTodo();
+})
 
 const todolist = [];
 renderTodoList();
@@ -41,15 +43,21 @@ function renderTodoList() {
     let name = todo.name;
     let date = todo.date;
 
-    console.log(name, date);
-    const html = ` <div class="todo-task"> <p class=task>${name} ${date} <\p>  <button class = "delete-button"
-    onclick= "todolist.splice(${i} , 1) ,
-     renderTodoList()"
+    // console.log(name, date);
+    const html = ` <div class="todo-task"> <p class=task>${name} ${date} <\p>  <button class = "delete-button js-delete-todo-button"
     > delete </button>  </div>`;
     todolisthtml += html;
   }
   document.querySelector('.js-todo-list').innerHTML = todolisthtml;
-  console.log(todolisthtml);
+  // console.log(todolisthtml);
+  document.querySelectorAll('.js-delete-todo-button').forEach((deleteButton, index) => {
+    deleteButton.addEventListener('click', () => {
+      console.log(deleteButton);
+      todolist.splice(index, 1);
+      renderTodoList();
+    });
+
+  });
 
 }
 

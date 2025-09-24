@@ -5,8 +5,7 @@
       wins: 0,
       lose: 0,
       ties: 0,
-    }
-      ;
+    }      ;
 
     // we can use or operator instead of if to initialize variables 
     /* if (!scores) {

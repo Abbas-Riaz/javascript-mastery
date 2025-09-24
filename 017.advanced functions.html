@@ -8,7 +8,23 @@
 </head>
 
 <body>
+
+  <button class="js-button" onclick="">click</button>
+
+
   <script>
+
+    const buttonElement = document.querySelector('.js-button');
+    const eventListner = () => {
+      console.log('clicked');
+    }
+    buttonElement.addEventListener('click', eventListner);
+    buttonElement.removeEventListener('click', eventListner)
+
+    buttonElement.addEventListener('click', eventListner);
+
+
+
     greeting();
     function greeting() {
       console.log('hello world');
@@ -47,13 +63,29 @@
     // traverse array using for each loop
 
     let array = ["wash dishes", "dinner", "work"];
-    array.forEach(function (num, index) {
+    array.forEach((num, index) => {
 
 
       console.log(num, index);
 
     })
 
+
+    // we can pass function to a functiona as a parameter . function are just values any thing we can do with value can do with function
+
+
+    function run(param) {
+      param();
+    }
+
+    run(function display() {
+      console.log('hello world !!!!');
+    })
+
+
+    let fruits = ['oranges', 'apples', 'bananaz'].forEach(function (fruit, index) {
+      console.log(fruit, index);
+    })
   </script>
 </body>
 

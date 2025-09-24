@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button onclick="changeText()" ; class="js-changetext">add</button>
+
+  <button onclick="displayMessage();">add to cart</button>
+  <p class="js-displaymessage"></p>
+
+
+</body>
+<script>
+
+  function changeText() {
+    document.querySelector('.js-changetext').innerHTML = 'Loading';
+    setTimeout(
+      function () {
+        document.querySelector('.js-changetext').innerHTML = 'Fininshed';
+      }
+      , 1000)
+  }
+
+  let intervalId;
+  function displayMessage() {
+
+    document.querySelector('.js-displaymessage').innerHTML = 'Added to cart';
+    clearTimeout(intervalId);
+    intervalId = setTimeout(function () {
+      document.querySelector('.js-displaymessage').innerHTML = '';
+
+    }, 2000);
+  }
+
+
+  let add = function () {
+    console.log(2 + 3);
+  }
+
+  add();
+  add();
+
+
+  function runTwice(param) {
+    param();
+    param();
+  }
+
+  runTwice(add);
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+ body {
+    background-color: rgb(27, 25, 27);
+    color: white;
+    font-family: Arial;
+
+
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+
+
+  .move-button {
+
+    cursor: pointer;
+    /* padding: 10px; */
+
+  }
+
+
+
+  button {
+    background: transparent;
+    border: none;
+    width: 120px;
+    height: 120px;
+    background: transparent;
+    border: 3px solid white;
+    border-radius: 70px;
+    margin-left: 20px
+  }
+
+  .reset-button  , .auto-play {
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    background-color: rgb(175, 103, 8);
+    color: rgb(255, 255, 255);
+    width: 140px;
+    height: 50px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  .scores {
+    font-size: 25px;
+    margin-top: 40px;
+  }
